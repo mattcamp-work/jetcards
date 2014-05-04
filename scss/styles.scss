@@ -1,0 +1,101 @@
+@import "../css/bootstrap.css";
+
+
+
+ul.decks {
+	min-width: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+
+	li {
+		width:50px;
+		min-height: 40px;
+		background-color: white;
+		border: 1px solid silver;
+		display: inline-block;
+	
+
+	}
+}
+
+ul.deck-nav {
+	width: 50%;
+	padding: 0;
+	margin-top: 1em;
+	opacity: .3;
+	transition:all .3s linear;
+	&:hover {
+		opacity: 1;
+
+	}
+	overflow: hidden;
+	li {
+		display: inline-block;
+		list-style-type: none;
+		a {
+		display: inline-block;
+		background-color: red;
+		color:white;
+		padding: 5px;
+		}
+		&:nth-of-type(1) a {
+			background-color: green;//mix(red,blue,100%);
+		}
+		&:nth-of-type(2) a {
+			background-color: mix(red,blue,80%);
+		}
+		&:nth-of-type(3) a {
+			background-color: mix(red,blue,60%);
+		}
+		&:nth-of-type(4) a {
+			background-color: mix(red,blue,20%);
+		}
+		&:nth-of-type(5) a {
+			background-color: mix(red,blue,0%);
+		}
+		&:nth-of-type(6) a {
+			background-color: green;//mix(red,blue,0%);
+		}
+
+	}
+}
+
+ul.cards {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	height: 300px;
+
+	li {
+		width: 400px;
+		height: 300px;
+		background-color: white;
+		border: 1px solid silver;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 30px;
+		position: absolute;
+		top:0;
+		left:0;
+		transition:all .3s linear;
+		&:first-of-type {
+			z-index: 10;
+			&:hover {
+				//opacity: .95
+			}
+			&:active {
+				opacity: 0;
+			}
+		}
+
+		h2,h3 {
+			text-align: center;
+		}
+
+		p.deck-title {
+			font-size: 12px;
+		}
+
+	}
+}
