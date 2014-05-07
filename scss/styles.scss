@@ -1,5 +1,17 @@
 @import "../css/bootstrap.css";
 
+@import "compass";
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
 
 
 ul.decks {
@@ -20,17 +32,19 @@ ul.decks {
 }
 
 ul.deck-nav {
-	width: 50%;
+	width: 400px;
 	padding: 0;
 	margin-top: 1em;
-	opacity: .3;
+	//opacity: .3;
 	transition:all .3s linear;
+	text-align: center;
 	&:hover {
 		opacity: 1;
 
 	}
 	overflow: hidden;
 	li {
+		vertical-align: top;
 		display: inline-block;
 		list-style-type: none;
 		a {
@@ -79,6 +93,7 @@ ul.cards {
 		top:0;
 		left:0;
 		transition:all .3s linear;
+		//linear-gradient(color-stops(white, black), left);
 		&:first-of-type {
 			z-index: 10;
 			&:hover {
