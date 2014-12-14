@@ -31,6 +31,33 @@ matt.cards[i] = new Card();
 };
 
 
+var celcius = "inputCelcius";
+var perfectTemp = 72;
+var chillyTemp = 0;
+
+function convertTemp(celcius){
+
+var conversion = ((9/5) * celcius) + 32;
+conversion = Math.round(conversion);
+
+  if (conversion === perfectTemp) {
+
+        //just use CSS to change visual shit, infact memorize this format, you'll use it all the time
+        return $("body").css({"background-image":"url(../img/perfect-temp.jpg)"});
+    
+    } else if (conversion < perfectTemp ) {
+        alert("it's cold yo");
+    } else if (conversion > perfectTemp ) {
+        alert("can I get sum A/C up in dis bitch?");
+    };
+
+
+}
+
+
+//once you make a function, you need to call it. 
+convertTemp(celcius);
+
 
 
 
